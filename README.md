@@ -2,66 +2,66 @@
 
 <div align="center">
 
-**Умный Telegram бот на основе ChatGPT с поддержкой истории диалога и админ-панелью**
+**Smart Telegram bot based on ChatGPT with conversation history support and admin panel**
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![aiogram](https://img.shields.io/badge/aiogram-3.22+-green.svg)](https://github.com/aiogram/aiogram)
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-orange.svg)](https://openai.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[Features](#-возможности) • [Installation](#-установка) • [Usage](#-использование) • [Configuration](#-настройка)
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Configuration](#-configuration)
 
 </div>
 
 ---
 
-## 📖 Описание
+## 📖 Description
 
-Telegram AI Chatbot - это полнофункциональный Telegram бот, использующий мощь OpenAI API для общения с пользователями. Бот поддерживает историю диалога, админ-панель, статистику и многое другое.
+Telegram AI Chatbot is a full-featured Telegram bot that uses the power of OpenAI API to communicate with users. The bot supports conversation history, admin panel, statistics, and much more.
 
-Мы создали этого бота, чтобы упростить создание умных Telegram ботов с поддержкой AI. Библиотека имеет следующие возможности:
+We built this bot to simplify creating smart Telegram bots with AI support. The library has the following capabilities:
 
-- **Асинхронные вызовы OpenAI API**, позволяющие обрабатывать несколько запросов одновременно
-- **Простое создание и модификация команд** и обработчиков
-- **Сохранение истории диалога** для более осмысленных ответов
-- **Админ-панель** для управления ботом
+- **Asynchronous OpenAI API calls**, allowing multiple requests to be processed simultaneously
+- **Simple creation and modification** of commands and handlers
+- **Conversation history storage** for more meaningful responses
+- **Admin panel** for bot management
 
-Библиотека построена максимально интуитивно. Нет сложных концепций для изучения.
+The library is built as intuitively as possible. No complex concepts to learn.
 
-## ✨ Возможности
+## ✨ Features
 
-### Для пользователей
-- 💬 **Умное общение** - отвечает на вопросы используя GPT-4o, GPT-4 Turbo или GPT-3.5 Turbo
-- 🧠 **Контекст диалога** - помнит последние 10 сообщений для более осмысленных ответов
-- 🔄 **Очистка истории** - возможность начать новый разговор одной командой
-- 📝 **Понятные ошибки** - информативные сообщения при проблемах
+### For Users
+- 💬 **Smart communication** - answers questions using GPT-4o, GPT-4 Turbo, or GPT-3.5 Turbo
+- 🧠 **Conversation context** - remembers last 10 messages for more meaningful responses
+- 🔄 **History clearing** - ability to start a new conversation with one command
+- 📝 **Clear errors** - informative messages when problems occur
 
-### Для администраторов
-- 🔐 **Управление моделью** - переключение между GPT-4o, GPT-4 Turbo и GPT-3.5 Turbo
-- 📊 **Статистика** - отслеживание количества пользователей и сообщений
-- 📢 **Рассылки** - отправка сообщений всем пользователям бота
-- 📋 **Логирование** - подробные логи всех операций
+### For Administrators
+- 🔐 **Model management** - switch between GPT-4o, GPT-4 Turbo, and GPT-3.5 Turbo
+- 📊 **Statistics** - track number of users and messages
+- 📢 **Broadcasts** - send messages to all bot users
+- 📋 **Logging** - detailed logs of all operations
 
-## 🚀 Установка
+## 🚀 Installation
 
-Telegram AI Chatbot поддерживает Python 3.8 и выше.
+Telegram AI Chatbot supports Python 3.8 and above.
 
-Для установки зависимостей:
+To install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Этот проект зависит от следующих пакетов:
+This project depends on the following packages:
 
-- `aiogram` - асинхронный фреймворк для Telegram ботов
-- `openai` - клиент для OpenAI API
-- `python-dotenv` - управление переменными окружения
-- `aiosqlite` - асинхронная работа с SQLite
+- `aiogram` - asynchronous framework for Telegram bots
+- `openai` - client for OpenAI API
+- `python-dotenv` - environment variable management
+- `aiosqlite` - asynchronous SQLite operations
 
-## 📝 Использование
+## 📝 Usage
 
-После установки пакетов создайте файл `.env` в корне проекта и добавьте ваш OpenAI API ключ:
+After installing packages, create a `.env` file in the project root and add your OpenAI API key:
 
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
@@ -70,42 +70,42 @@ ADMIN_ID=your_telegram_user_id
 LOG_LEVEL=INFO
 ```
 
-### Быстрый старт
+### Quick Start
 
-1. **Клонируйте репозиторий:**
+1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/yourusername/telegram-ai-chatbot.git
 cd telegram-ai-chatbot
 ```
 
-2. **Установите зависимости:**
+2. **Install dependencies:**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Настройте переменные окружения:**
+3. **Configure environment variables:**
 
-Скопируйте `env.example` в `.env` и заполните своими данными:
+Copy `env.example` to `.env` and fill in your data:
 
 ```bash
 cp env.example .env
 ```
 
-4. **Запустите бота:**
+4. **Run the bot:**
 
 ```bash
 python bot.py
 ```
 
-Готово! Бот запущен и готов к работе 🎉
+Done! Bot is running and ready to work 🎉
 
-## 💻 Примеры использования
+## 💻 Usage Examples
 
-### Основной файл (bot.py)
+### Main File (bot.py)
 
-Главная функция - это async функция, которая содержит всю бизнес-логику:
+The main function is an async function that contains all business logic:
 
 ```python
 async def main() -> None:
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-### Обработка сообщений пользователя
+### Handling User Messages
 
 ```python
 @router.message(F.text)
@@ -152,73 +152,73 @@ async def handle_message(message: Message) -> None:
     await message.answer(ai_response)
 ```
 
-### Использование команд
+### Using Commands
 
-**Для пользователей:**
+**For users:**
 ```
-/start - Начать работу с ботом
-/help - Показать список команд
-/reset - Очистить историю диалога
+/start - Start working with the bot
+/help - Show list of commands
+/reset - Clear conversation history
 ```
 
-**Для администраторов:**
+**For administrators:**
 ```
-/setmodel gpt-4o - Изменить модель AI
-/stats - Показать статистику бота
-/broadcast Привет всем! - Отправить сообщение всем пользователям
+/setmodel gpt-4o - Change AI model
+/stats - Show bot statistics
+/broadcast Hello everyone! - Send message to all users
 ```
 
 ## 📋 API Reference
 
 ### Config
 
-Класс для работы с конфигурацией бота.
+Class for working with bot configuration.
 
-**Методы:**
+**Methods:**
 
-- `Config.TELEGRAM_TOKEN()` - получить токен Telegram бота
-- `Config.OPENAI_API_KEY()` - получить API ключ OpenAI
-- `Config.ADMIN_IDS()` - получить список ID администраторов
-- `Config.validate()` - проверить наличие всех необходимых переменных
-- `Config.is_admin(user_id)` - проверить, является ли пользователь администратором
+- `Config.TELEGRAM_TOKEN()` - get Telegram bot token
+- `Config.OPENAI_API_KEY()` - get OpenAI API key
+- `Config.ADMIN_IDS()` - get list of administrator IDs
+- `Config.validate()` - check presence of all required variables
+- `Config.is_admin(user_id)` - check if user is administrator
 
 ### OpenAIService
 
-Сервис для работы с OpenAI API.
+Service for working with OpenAI API.
 
-**Методы:**
+**Methods:**
 
-- `get_response(user_message, history)` - получить ответ от AI (await)
-- `set_model(model)` - установить модель AI
-- `get_model()` - получить текущую модель
+- `get_response(user_message, history)` - get AI response (await)
+- `set_model(model)` - set AI model
+- `get_model()` - get current model
 
-**Пример:**
+**Example:**
 
 ```python
 from services.openai_service import OpenAIService
 
 openai_service = OpenAIService()
 response = await openai_service.get_response(
-    user_message="Привет!",
+    user_message="Hello!",
     history=[]
 )
 ```
 
 ### Database
 
-Класс для работы с базой данных.
+Class for working with database.
 
-**Методы:**
+**Methods:**
 
-- `init_db()` - инициализировать базу данных (await)
-- `add_user(user_id, username, first_name)` - добавить пользователя (await)
-- `add_message(user_id, role, content)` - добавить сообщение (await)
-- `get_conversation_history(user_id, limit)` - получить историю диалога (await)
-- `clear_conversation_history(user_id)` - очистить историю (await)
-- `get_user_count()` - получить количество пользователей (await)
-- `get_message_count()` - получить количество сообщений (await)
+- `init_db()` - initialize database (await)
+- `add_user(user_id, username, first_name)` - add user (await)
+- `add_message(user_id, role, content)` - add message (await)
+- `get_conversation_history(user_id, limit)` - get conversation history (await)
+- `clear_conversation_history(user_id)` - clear history (await)
+- `get_user_count()` - get user count (await)
+- `get_message_count()` - get message count (await)
 
-**Пример:**
+**Example:**
 
 ```python
 from database.queries import Database
@@ -229,122 +229,122 @@ await db.init_db()
 history = await db.get_conversation_history(user_id=123456789, limit=10)
 ```
 
-## ⚙️ Настройка
+## ⚙️ Configuration
 
-### Изменение модели по умолчанию
+### Changing Default Model
 
-В файле `config.py`:
-
-```python
-DEFAULT_MODEL: str = "gpt-4o"  # Доступно: gpt-4o, gpt-4-turbo, gpt-3.5-turbo
-```
-
-### Изменение лимита истории
-
-В файле `config.py`:
+In `config.py` file:
 
 ```python
-CONVERSATION_HISTORY_LIMIT: int = 10  # Количество сохраняемых сообщений
+DEFAULT_MODEL: str = "gpt-4o"  # Available: gpt-4o, gpt-4-turbo, gpt-3.5-turbo
 ```
 
-### Добавление нескольких администраторов
+### Changing History Limit
 
-В файле `.env`:
+In `config.py` file:
+
+```python
+CONVERSATION_HISTORY_LIMIT: int = 10  # Number of messages to store
+```
+
+### Adding Multiple Administrators
+
+In `.env` file:
 
 ```env
 ADMIN_ID=123456789,987654321,111222333
 ```
 
-## 📁 Структура проекта
+## 📁 Project Structure
 
 ```
 telegram-ai-chatbot/
-├── bot.py                 # Главный файл бота
-├── config.py              # Конфигурация и настройки
-├── requirements.txt       # Зависимости Python
-├── README.md             # Документация
-├── .env.example          # Пример файла с переменными окружения
-├── .gitignore            # Игнорируемые файлы Git
+├── bot.py                 # Main bot file
+├── config.py              # Configuration and settings
+├── requirements.txt       # Python dependencies
+├── README.md             # Documentation
+├── .env.example          # Example environment variables file
+├── .gitignore            # Git ignored files
 ├── database/
 │   ├── __init__.py
-│   ├── models.py         # Модели данных
-│   └── queries.py        # Запросы к базе данных
+│   ├── models.py         # Data models
+│   └── queries.py        # Database queries
 ├── handlers/
 │   ├── __init__.py
-│   ├── user.py           # Обработчики команд пользователей
-│   └── admin.py          # Обработчики команд администраторов
+│   ├── user.py           # User command handlers
+│   └── admin.py          # Administrator command handlers
 └── services/
     ├── __init__.py
-    └── openai_service.py # Интеграция с OpenAI API
+    └── openai_service.py # OpenAI API integration
 ```
 
-## 🛠️ Технологии
+## 🛠️ Technologies
 
-- **Python 3.8+** - язык программирования
-- **aiogram 3.22+** - современный асинхронный фреймворк для Telegram ботов
-- **OpenAI API** - интеграция с ChatGPT (GPT-4o, GPT-4 Turbo, GPT-3.5 Turbo)
-- **SQLite** - база данных для хранения пользователей и истории
-- **python-dotenv** - управление переменными окружения
+- **Python 3.8+** - programming language
+- **aiogram 3.22+** - modern asynchronous framework for Telegram bots
+- **OpenAI API** - integration with ChatGPT (GPT-4o, GPT-4 Turbo, GPT-3.5 Turbo)
+- **SQLite** - database for storing users and history
+- **python-dotenv** - environment variable management
 
-## 🔒 Безопасность
+## 🔒 Security
 
-- ✅ Все токены хранятся в файле `.env`, который не попадает в Git
-- ✅ Файл `.env` добавлен в `.gitignore`
-- ✅ Никакие личные данные не хранятся в коде
-- ✅ Рекомендуется регулярно проверять использование API ключа в OpenAI Dashboard
+- ✅ All tokens are stored in `.env` file, which is not committed to Git
+- ✅ `.env` file is added to `.gitignore`
+- ✅ No personal data is stored in code
+- ✅ It's recommended to regularly check API key usage in OpenAI Dashboard
 
-## 🐛 Решение проблем
+## 🐛 Troubleshooting
 
-### Бот не запускается
-- Убедитесь, что все зависимости установлены: `pip install -r requirements.txt`
-- Проверьте, что файл `.env` создан и содержит все необходимые переменные
-- Проверьте логи в файле `bot.log`
+### Bot Won't Start
+- Make sure all dependencies are installed: `pip install -r requirements.txt`
+- Check that `.env` file is created and contains all required variables
+- Check logs in `bot.log` file
 
-### Бот не отвечает на сообщения
-- Проверьте правильность Telegram Bot Token
-- Убедитесь, что бот запущен и работает
-- Проверьте логи на наличие ошибок
+### Bot Not Responding to Messages
+- Check Telegram Bot Token correctness
+- Make sure bot is running and working
+- Check logs for errors
 
-### Ошибки OpenAI API
-- Проверьте правильность API ключа
-- Убедитесь, что на аккаунте OpenAI есть средства
-- Проверьте лимиты запросов в OpenAI Dashboard
+### OpenAI API Errors
+- Check API key correctness
+- Make sure your OpenAI account has funds
+- Check request limits in OpenAI Dashboard
 
-## 🤝 Вклад в проект
+## 🤝 Contributing
 
-Telegram AI Chatbot - это проект с открытым исходным кодом!
+Telegram AI Chatbot is an open source project!
 
-Этот проект постоянно развивается, и мы приветствуем любой вклад или обратную связь.
+This project is constantly evolving, and we welcome any contribution or feedback.
 
-**Открытые задачи:**
-- Добавление поддержки других AI моделей
-- Улучшение обработки ошибок
-- Добавление тестов
-- Оптимизация производительности
+**Open Tasks:**
+- Adding support for other AI models
+- Improving error handling
+- Adding tests
+- Performance optimization
 
-Если вы хотите внести вклад:
+If you want to contribute:
 
-1. Fork репозиторий
-2. Создайте ветку для новой функции (`git checkout -b feature/AmazingFeature`)
-3. Зафиксируйте изменения (`git commit -m 'Add some AmazingFeature'`)
-4. Отправьте в ветку (`git push origin feature/AmazingFeature`)
-5. Откройте Pull Request
+1. Fork the repository
+2. Create a branch for new feature (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 Лицензия
+## 📄 License
 
-Этот проект создан для образовательных целей. Используйте на свой страх и риск.
+This project is created for educational purposes. Use at your own risk.
 
-## ⭐ Благодарности
+## ⭐ Acknowledgments
 
-- [aiogram](https://github.com/aiogram/aiogram) - отличный фреймворк для Telegram ботов
-- [OpenAI](https://openai.com/) - за мощный API и модели GPT
+- [aiogram](https://github.com/aiogram/aiogram) - excellent framework for Telegram bots
+- [OpenAI](https://openai.com/) - for powerful API and GPT models
 
 ---
 
 <div align="center">
 
-**Сделано с ❤️ используя Python и OpenAI**
+**Made with ❤️ using Python and OpenAI**
 
-⭐ Если проект вам понравился, поставьте звезду!
+⭐ If you liked the project, give it a star!
 
 </div>
